@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <section>
+            <div class="row">
+              <div class="col-3">
+                <h5>🌧</h5>
+              </div>
+              <div class="col-3 current-forecast">
+                <h2>
+                  <span id="temperature-number">17 </span>
+                  <span class="units">
+                    <span id="basic-temp-sign">°C</span> |
+                    <a href="#" id="convert-temp-link">°F</a>
+                  </span>
+                </h2>
+                <h3 id="description">Rain</h3>
+              </div>
+              <div class="col-6">
+                <h1 id="city">Wexford</h1>
+                <h3 class="current-week-day" id="current-day-time">
+                  Sunday 2 p.m.
+                </h3>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <form id="search-form">
+              <div class="row">
+                <div class="col-8">
+                  <input
+                    type="text"
+                    class="form-control border-1 shadow-sm"
+                    id="city-input"
+                    placeholder="Enter a city"
+                    autofocus="on"
+                  />
+                </div>
+                <div class="col">
+                  <input
+                    type="submit"
+                    class="btn btn-primary shadow-sm"
+                    value="Search"
+                  />
+                  <button
+                    type="button"
+                    class="btn btn-success shadow-sm"
+                    id="current-button"
+                  >
+                    Current
+                  </button>
+                </div>
+              </div>
+            </form>
+          </section>
+
+          <hr />
+          <section>
+            <h4>Weekly Forecast:</h4>
+            <div class="row forecast">
+              <div class="col">
+                <div class="card border-0 shadow-sm">
+                  <div class="card-body">
+                    <ul>
+                      <li>
+                        <div class="week-day">MON</div>
+                      </li>
+                      <li>
+                        <div class="weather-icon">🌤</div>
+                      </li>
+                      <li>
+                        <div class="temperature">
+                          <strong>9°C/</strong><span>3°C</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card border-0 shadow-sm">
+                  <div class="card-body">
+                    <ul>
+                      <li>
+                        <div class="week-day">TUE</div>
+                      </li>
+                      <li>
+                        <div class="weather-icon">🌤</div>
+                      </li>
+                      <li>
+                        <div class="temperature">
+                          <strong>8°C/</strong><span>2°C</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card border-0 shadow-sm">
+                  <div class="card-body">
+                    <ul>
+                      <li>
+                        <div class="week-day">WED</div>
+                      </li>
+                      <li>
+                        <div class="weather-icon">☀</div>
+                      </li>
+                      <li>
+                        <div class="temperature">
+                          <strong>13°C/</strong><span>8°C</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card border-0 shadow-sm">
+                  <div class="card-body">
+                    <ul>
+                      <li>
+                        <div class="week-day">THU</div>
+                      </li>
+                      <li>
+                        <div class="weather-icon">🌤</div>
+                      </li>
+                      <li>
+                        <div class="temperature">
+                          <strong>8°C/</strong
+                          ><span class="nightTemperature">2°C</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card border-0 shadow-sm">
+                  <div class="card-body">
+                    <ul>
+                      <li>
+                        <div class="week-day">FRI</div>
+                      </li>
+                      <li>
+                        <div class="weather-icon">☀</div>
+                      </li>
+                      <li>
+                        <div class="temperature">
+                          <strong>12°C/</strong><span>4°C</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <footer>
+        <a href="https://github.com/NataliiaOpanasiuk/weather-app">
+          Open-source code</a
+        >, by Nataliia Opanasiuk
+      </footer>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
