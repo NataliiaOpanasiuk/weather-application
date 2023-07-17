@@ -3,14 +3,16 @@ body {
   width: 600px;
 }
 h1 {
+  font-weight: 600;
   color: #198754;
   text-align: right;
+  margin-bottom: 0;
 }
-h5 {
-  font-size: 100px;
-  position: relative;
-  top: -25px;
+h2 {
+  font-family: Times, serif;
+  color: #342f51;
 }
+
 ul {
   padding: 0;
   margin: 0;
@@ -18,21 +20,28 @@ ul {
 li {
   list-style: none;
   text-align: center;
+  color: #342f51;
 }
 #description {
   text-transform: capitalize;
+  text-align: right;
 }
+#temperature-number {
+  font-size: 64px;
+}
+
 .units {
   font-size: 18px;
   position: relative;
-  top: -10px;
+  top: -30px;
 }
 .nightTemperature {
   color: gray;
   font-size: 12px;
 }
 .current-forecast {
-  padding-left: 20px;
+  margin-bottom: 10px;
+  font-family: Times, serif;
 }
 .current-week-day {
   text-align: right;
@@ -48,8 +57,10 @@ li {
 .week-day {
   font-size: 14px;
   text-align: center;
+  font-family: Times, serif;
 }
 .temperature {
   font-size: 14px;
   text-align: center;
+  font-family: Times, serif;
 }

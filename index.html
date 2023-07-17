@@ -17,26 +17,32 @@
     <div class="container">
       <div class="card">
         <div class="card-body">
-          <section>
+          <section class="current-forecast">
             <div class="row">
-              <div class="col-3">
-                <h5>🌧</h5>
-              </div>
-              <div class="col-3 current-forecast">
-                <h2>
-                  <span id="temperature-number">17 </span>
-                  <span class="units">
-                    <span id="basic-temp-sign">°C</span> |
-                    <a href="#" id="convert-temp-link">°F</a>
-                  </span>
-                </h2>
-                <h3 id="description">Rain</h3>
+              <div class="col-6 current-forecast">
+                <div class="d-flex weather-temperature">
+                  <img
+                    src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                    alt="clouds"
+                    id="weather-icon"
+                  />
+                  <div>
+                    <strong id="temperature-number">17</strong>
+                    <span class="units">
+                      <span id="basic-temp-sign">°C</span> |
+                      <a href="#" id="convert-temp-link">°F</a>
+                    </span>
+                  </div>
+                </div>
               </div>
               <div class="col-6">
                 <h1 id="city">Wexford</h1>
-                <h3 class="current-week-day" id="current-day-time">
-                  Sunday 2 p.m.
-                </h3>
+                <ul>
+                  <li class="current-week-day" id="current-day-time">
+                    Sunday 2 p.m.
+                  </li>
+                  <li id="description">Rain</li>
+                </ul>
               </div>
             </div>
           </section>
@@ -73,7 +79,7 @@
 
           <hr />
           <section>
-            <h4>Weekly Forecast:</h4>
+            <h2>Weekly Forecast:</h2>
             <div class="row forecast">
               <div class="col">
                 <div class="card border-0 shadow-sm">
@@ -87,7 +93,8 @@
                       </li>
                       <li>
                         <div class="temperature">
-                          <strong>9°C/</strong><span>3°C</span>
+                          <strong>9°C/</strong
+                          ><span class="nightTemperature">3°C</span>
                         </div>
                       </li>
                     </ul>
@@ -107,7 +114,8 @@
                       </li>
                       <li>
                         <div class="temperature">
-                          <strong>8°C/</strong><span>2°C</span>
+                          <strong>8°C/</strong
+                          ><span class="nightTemperature">2°C</span>
                         </div>
                       </li>
                     </ul>
@@ -127,7 +135,8 @@
                       </li>
                       <li>
                         <div class="temperature">
-                          <strong>13°C/</strong><span>8°C</span>
+                          <strong>13°C/</strong
+                          ><span class="nightTemperature">8°C</span>
                         </div>
                       </li>
                     </ul>
@@ -168,7 +177,8 @@
                       </li>
                       <li>
                         <div class="temperature">
-                          <strong>12°C/</strong><span>4°C</span>
+                          <strong>12°C/</strong
+                          ><span class="nightTemperature">4°C</span>
                         </div>
                       </li>
                     </ul>
