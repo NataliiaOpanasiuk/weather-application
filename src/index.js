@@ -39,6 +39,13 @@ function showCityData(response) {
   let cityDescription = response.data.weather[0].description;
   let description = document.querySelector("#description");
   description.innerHTML = cityDescription;
+
+  let weatherPicture = response.data.weather[0].icon;
+  let picture = document.querySelector("#weather-icon");
+  picture.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${weatherPicture}@2x.png`
+  );
 }
 
 function searchCity(city) {

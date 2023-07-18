@@ -2,6 +2,7 @@ body {
   margin: 30px;
   width: 600px;
 }
+
 h1 {
   font-weight: 600;
   color: #198754;
@@ -29,7 +30,11 @@ li {
 #temperature-number {
   font-size: 64px;
 }
-
+.weather-temperature img {
+  margin-right: 5px;
+  height: 90px;
+  width: 90px;
+}
 .units {
   font-size: 18px;
   position: relative;
