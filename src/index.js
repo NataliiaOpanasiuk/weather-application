@@ -32,9 +32,17 @@ function showCityData(response) {
   let city = document.querySelector("#city");
   city.innerHTML = cityName;
 
-  let cityTemperature = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+
+  let cityTemperature = Math.round(celsiusTemperature);
   let temperature = document.querySelector("#temperature-number");
   temperature.innerHTML = cityTemperature;
+
+  //  <!-- if I change to °F and search another city it will changed automatically to °C. -->
+  let celcSign = document.querySelector("#basic-temp-sign");
+  celcSign.innerHTML = `°C`;
+  let fahrSign = document.querySelector("#convert-temp-link");
+  fahrSign.innerHTML = `°F`;
 
   let cityDescription = response.data.weather[0].description;
   let description = document.querySelector("#description");
@@ -82,3 +90,43 @@ function showCurrentCity(event) {
 
 let currentCity = document.querySelector("#current-button");
 currentCity.addEventListener("click", showCurrentCity);
+
+// 🙀Bonus Feature Week 4
+// Display a fake temperature (i.e 17) in Celsius and add a link to convert it to Fahrenheit. When clicking on it, it should convert the temperature to Fahrenheit. When clicking on Celsius, it should convert it back to Celsius.
+
+function showCelsius() {
+  let tempNumber = document.querySelector("#temperature-number");
+  tempNumber.innerHTML = Math.round(celsiusTemperature);
+
+  let celcSign = document.querySelector("#basic-temp-sign");
+  celcSign.innerHTML = `°C`;
+  let fahrSign = document.querySelector("#convert-temp-link");
+  fahrSign.innerHTML = `°F`;
+}
+
+function showFahrenheit() {
+  let convertedTemperature = Math.round((celsiusTemperature * 9) / 5 + 32);
+  let tempNumber = document.querySelector("#temperature-number");
+  tempNumber.innerHTML = convertedTemperature;
+
+  let celcSign = document.querySelector("#basic-temp-sign");
+  celcSign.innerHTML = `°F`;
+  let fahrSign = document.querySelector("#convert-temp-link");
+  fahrSign.innerHTML = `°C`;
+}
+
+function convertTemp(event) {
+  event.preventDefault();
+  clickCount++;
+
+  if (clickCount % 2 === 0) {
+    showCelsius();
+  } else {
+    showFahrenheit();
+  }
+}
+
+let celsiusTemperature = null;
+let convertLink = document.querySelector("#convert-temp-link");
+let clickCount = 0;
+convertLink.addEventListener("click", convertTemp);

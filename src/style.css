@@ -1,5 +1,5 @@
 body {
-  margin: 30px;
+  margin: 30px auto;
   width: 600px;
 }
 
@@ -23,12 +23,21 @@ li {
   text-align: center;
   color: #342f51;
 }
+footer {
+  text-align: center;
+}
 #description {
   text-transform: capitalize;
   text-align: right;
 }
 #temperature-number {
   font-size: 64px;
+}
+#convert-temp-link {
+  text-decoration: none;
+}
+#convert-temp-link:hover {
+  text-decoration: underline;
 }
 .weather-temperature img {
   margin-right: 5px;
