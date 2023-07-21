@@ -33,9 +33,13 @@ function formatDay(timestamp) {
   return days[day];
 }
 
+// function displayForecast(response) {
+//   console.log(response.data.list);
+// }
+
 function displayForecast(response) {
   let forecast = response.data.list;
-  // console.log(response.data.list);
+  console.log(response.data.list);
 
   let forecastElement = document.querySelector("#forecast");
 
@@ -62,10 +66,10 @@ function displayForecast(response) {
                         <div class="forecast-temperature-max">
                           <strong>${Math.round(
                             forecastDay.main.temp_max
-                          )}°/</strong
+                          )}°C/</strong
                           ><span class="forecast-temperature-min">${Math.round(
                             forecastDay.main.temp_min
-                          )}°</span>
+                          )}°C</span>
                         </div>
                       </li>
                     </ul>
@@ -82,9 +86,14 @@ function displayForecast(response) {
 function getForecast(coordinates) {
   console.log(coordinates.lon);
   console.log(coordinates.lat);
-  let apiKey = "eeeac55847ebc465f9151518c7d7b9b6";
-  // https://api.openweathermap.org/data/2.5/forecast/daily
+  let apiKey = "b107f0128f12cb3797262a88dde7c0fa";
+
+  // let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+  // let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
   let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -123,7 +132,7 @@ function showCityData(response) {
 }
 
 function searchCity(city) {
-  let apiKey = "eeeac55847ebc465f9151518c7d7b9b6";
+  let apiKey = "b107f0128f12cb3797262a88dde7c0fa";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showCityData);
 }
