@@ -25,6 +25,69 @@ let currentTime = new Date();
 let todayDayTime = document.querySelector("#current-day-time");
 todayDayTime.innerHTML = formatDate(currentTime);
 
+//forecast
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.list;
+  // console.log(response.data.list);
+
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row forecast">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col">
+                <div class="card border-0 shadow-sm">
+                  <div class="card-body">
+                    <ul>
+                      <li>
+                        <div class="forecast-week-day">${formatDay(
+                          forecastDay.dt
+                        )}</div>
+                      </li>
+                      <li>
+                        <img src="https://openweathermap.org/img/wn/${
+                          forecastDay.weather[0].icon
+                        }@2x.png" alt="" width="64"/>
+                      </li>
+                      <li>
+                        <div class="forecast-temperature-max">
+                          <strong>${Math.round(
+                            forecastDay.main.temp_max
+                          )}°/</strong
+                          ><span class="forecast-temperature-min">${Math.round(
+                            forecastDay.main.temp_min
+                          )}°</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>`;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates.lon);
+  console.log(coordinates.lat);
+  let apiKey = "eeeac55847ebc465f9151518c7d7b9b6";
+  // https://api.openweathermap.org/data/2.5/forecast/daily
+  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 // Week 5
 // In your project, when a user searches for a city (example: New York), it should display the name of the city on the result page and the current temperature of the city.
 function showCityData(response) {
@@ -55,6 +118,8 @@ function showCityData(response) {
     "src",
     `https://openweathermap.org/img/wn/${weatherPicture}@2x.png`
   );
+
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -131,41 +196,3 @@ let celsiusTemperature = null;
 let convertLink = document.querySelector("#convert-temp-link");
 let clickCount = 0;
 convertLink.addEventListener("click", convertTemperature);
-
-//forecast
-
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
-  let days = ["SAT", "SUN", "MON", "TUE", "WED"];
-
-  let forecastHTML = `<div class="row forecast">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col">
-                <div class="card border-0 shadow-sm">
-                  <div class="card-body">
-                    <ul>
-                      <li>
-                        <div class="forecast-week-day">${day}</div>
-                      </li>
-                      <li>
-                        <div class="forecast-weather-icon">🌤</div>
-                      </li>
-                      <li>
-                        <div class="forecast-temperature-max">
-                          <strong>9°/</strong
-                          ><span class="forecast-temperature-min">3°</span>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>`;
-  });
-
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
-}
-
-displayForecast();
