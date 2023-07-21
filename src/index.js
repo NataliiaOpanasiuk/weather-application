@@ -28,6 +28,8 @@ todayDayTime.innerHTML = formatDate(currentTime);
 // Week 5
 // In your project, when a user searches for a city (example: New York), it should display the name of the city on the result page and the current temperature of the city.
 function showCityData(response) {
+  clickCount = 0;
+
   let cityName = response.data.name;
   let city = document.querySelector("#city");
   city.innerHTML = cityName;
@@ -38,7 +40,6 @@ function showCityData(response) {
   let temperature = document.querySelector("#temperature-number");
   temperature.innerHTML = cityTemperature;
 
-  //  <!-- if I change to °F and search another city it will changed automatically to °C. -->
   let celcSign = document.querySelector("#basic-temp-sign");
   celcSign.innerHTML = `°C`;
   let fahrSign = document.querySelector("#convert-temp-link");
@@ -115,7 +116,7 @@ function showFahrenheit() {
   fahrSign.innerHTML = `°C`;
 }
 
-function convertTemp(event) {
+function convertTemperature(event) {
   event.preventDefault();
   clickCount++;
 
@@ -129,4 +130,4 @@ function convertTemp(event) {
 let celsiusTemperature = null;
 let convertLink = document.querySelector("#convert-temp-link");
 let clickCount = 0;
-convertLink.addEventListener("click", convertTemp);
+convertLink.addEventListener("click", convertTemperature);
