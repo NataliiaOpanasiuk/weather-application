@@ -131,3 +131,41 @@ let celsiusTemperature = null;
 let convertLink = document.querySelector("#convert-temp-link");
 let clickCount = 0;
 convertLink.addEventListener("click", convertTemperature);
+
+//forecast
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["SAT", "SUN", "MON", "TUE", "WED"];
+
+  let forecastHTML = `<div class="row forecast">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col">
+                <div class="card border-0 shadow-sm">
+                  <div class="card-body">
+                    <ul>
+                      <li>
+                        <div class="forecast-week-day">${day}</div>
+                      </li>
+                      <li>
+                        <div class="forecast-weather-icon">🌤</div>
+                      </li>
+                      <li>
+                        <div class="forecast-temperature-max">
+                          <strong>9°/</strong
+                          ><span class="forecast-temperature-min">3°</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+displayForecast();

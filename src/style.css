@@ -49,10 +49,7 @@ footer {
   position: relative;
   top: -30px;
 }
-.nightTemperature {
-  color: gray;
-  font-size: 12px;
-}
+
 .current-forecast {
   margin-bottom: 10px;
   font-family: Times, serif;
@@ -64,17 +61,22 @@ footer {
 .forecast {
   margin-top: 15px;
 }
-.weather-icon {
+.forecast-weather-icon {
   font-size: 30px;
   text-align: center;
 }
-.week-day {
+.forecast-week-day {
   font-size: 14px;
   text-align: center;
   font-family: Times, serif;
 }
-.temperature {
-  font-size: 14px;
+.forecast-temperature-max {
+  font-size: 16px;
   text-align: center;
+  font-family: Times, serif;
+}
+.forecast-temperature-min {
+  color: gray;
+  font-size: 14px;
   font-family: Times, serif;
 }
