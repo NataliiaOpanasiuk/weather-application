@@ -15,33 +15,27 @@
   </head>
   <body>
     <div class="container">
-      <div class="card">
+      <div class="card shadow-sm weather-app">
         <div class="card-body">
           <section class="current-forecast">
             <div class="row">
               <div class="col-6 current-forecast">
                 <div class="d-flex weather-temperature">
-                  <img
-                    src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                    alt="clouds"
-                    id="weather-icon"
-                  />
+                  <img src="" alt="" id="weather-icon" />
                   <div>
-                    <strong id="temperature-number">17</strong>
+                    <strong id="temperature-number"></strong>
                     <span class="units">
-                      <span id="basic-temp-sign">°C</span> |
-                      <a href="#" id="convert-temp-link">°F</a>
+                      <span id="basic-temp-sign"></span> |
+                      <a href="#" id="convert-temp-link"></a>
                     </span>
                   </div>
                 </div>
               </div>
               <div class="col-6">
-                <h1 id="city">Wexford</h1>
+                <h1 id="city"></h1>
                 <ul>
-                  <li class="current-week-day" id="current-day-time">
-                    Sunday 2 p.m.
-                  </li>
-                  <li id="description">Rain</li>
+                  <li class="current-week-day" id="current-day-time"></li>
+                  <li id="description"></li>
                 </ul>
               </div>
             </div>
@@ -57,14 +51,15 @@
                     id="city-input"
                     placeholder="Enter a city"
                     autofocus="on"
+                    autocomplete="off"
                   />
-                  <!-- autocomplete="off" -->
                 </div>
                 <div class="col">
                   <input
                     type="submit"
                     class="btn btn-primary shadow-sm"
                     value="Search"
+                    id="submit-button"
                   />
                   <button
                     type="button"
@@ -93,8 +88,6 @@
             target="_blank"
             >open-sourced on GitHub</a
           >.
-          <!-- and hosted on
-          <a href="https://majestic-capybara-62bca2.netlify.app/#"> Netlify</a> -->
         </small>
       </footer>
     </div>

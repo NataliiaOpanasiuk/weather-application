@@ -1,11 +1,12 @@
 body {
   margin: 30px auto;
   width: 600px;
+  background-color: #fce0d8;
 }
 
 h1 {
   font-weight: 600;
-  color: #198754;
+  color: #ec6e4c;
   text-align: right;
   margin-bottom: 0;
 }
@@ -23,8 +24,15 @@ li {
   text-align: center;
   color: #342f51;
 }
+hr {
+  color: #ec6e4c;
+  width: 400px;
+  margin: 25px auto 15px;
+}
 footer {
+  margin-top: 15px;
   text-align: center;
+  font-size: 13px;
 }
 #description {
   text-transform: capitalize;
@@ -39,6 +47,28 @@ footer {
 #convert-temp-link:hover {
   text-decoration: underline;
 }
+#city-input {
+  border: 2px solid #000;
+}
+#submit-button {
+  background: #49484a;
+  border: 1px solid #000;
+}
+#submit-button:hover {
+  background: #1d1d1e;
+  transition: all 150ms ease-in-out;
+}
+#current-button {
+  background: #ec6e4c;
+  margin-left: 2px;
+}
+#current-button:hover {
+  background: #c33d18;
+  transition: all 150ms ease-in-out;
+}
+.weather-app {
+  padding: 10px;
+}
 .weather-temperature img {
   margin-right: 5px;
   height: 90px;
@@ -49,7 +79,6 @@ footer {
   position: relative;
   top: -30px;
 }
-
 .current-forecast {
   margin-bottom: 10px;
   font-family: Times, serif;
@@ -57,26 +86,25 @@ footer {
 .current-week-day {
   text-align: right;
 }
-
 .forecast {
   margin-top: 15px;
 }
-.forecast-weather-icon {
-  font-size: 30px;
+.forecast img {
+  position: relative;
+  left: -5px;
+}
+.forcast-card {
+  width: 85px;
   text-align: center;
+  font-family: Times, serif;
 }
 .forecast-week-day {
   font-size: 14px;
-  text-align: center;
-  font-family: Times, serif;
 }
 .forecast-temperature-max {
-  font-size: 16px;
-  text-align: center;
-  font-family: Times, serif;
+  font-size: 12px;
 }
 .forecast-temperature-min {
   color: #ec6e4c;
-  font-size: 14px;
-  font-family: Times, serif;
+  font-size: 11px;
 }
