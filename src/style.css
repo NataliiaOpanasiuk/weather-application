@@ -61,6 +61,7 @@ footer {
 #current-button {
   background: #ec6e4c;
   margin-left: 2px;
+  border: 1px solid #000;
 }
 #current-button:hover {
   background: #c33d18;
