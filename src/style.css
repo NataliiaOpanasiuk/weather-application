@@ -3,7 +3,6 @@ body {
   width: 600px;
   background-color: #fce0d8;
 }
-
 h1 {
   font-weight: 600;
   color: #ec6e4c;
@@ -14,7 +13,6 @@ h2 {
   font-family: Times, serif;
   color: #342f51;
 }
-
 ul {
   padding: 0;
   margin: 0;
@@ -29,30 +27,55 @@ hr {
   width: 400px;
   margin: 25px auto 15px;
 }
-footer {
-  margin-top: 15px;
-  text-align: center;
-  font-size: 13px;
+
+/* ----------------------------------------------------------------------------
+  Current weather
+  -------------------------------------------------------------------------- */
+.weather-app {
+  padding: 10px;
+}
+.current-forecast {
+  margin-bottom: 10px;
+  font-family: Times, serif;
+}
+.weather-temperature img {
+  margin-right: 5px;
+  height: 90px;
+  width: 90px;
+}
+#temperature-number {
+  font-size: 64px;
+}
+.units {
+  font-size: 18px;
+  position: relative;
+  top: -30px;
+}
+#convert-temp-link {
+  text-decoration: none;
+  color: #ec6e4c;
+}
+#convert-temp-link:hover {
+  text-decoration: underline;
+  color: #f0491b;
+}
+.current-week-day {
+  text-align: right;
 }
 #description {
   text-transform: capitalize;
   text-align: right;
 }
-#temperature-number {
-  font-size: 64px;
-}
-#convert-temp-link {
-  text-decoration: none;
-}
-#convert-temp-link:hover {
-  text-decoration: underline;
-}
+/* ----------------------------------------------------------------------------
+  Search form
+  --------------------------------------------------------------------------
+   */
 #city-input {
-  border: 2px solid #000;
+  border: 2px solid #49484a;
 }
 #submit-button {
   background: #49484a;
-  border: 1px solid #000;
+  border: 1px solid #49484a;
 }
 #submit-button:hover {
   background: #1d1d1e;
@@ -61,38 +84,18 @@ footer {
 #current-button {
   background: #ec6e4c;
   margin-left: 2px;
-  border: 1px solid #000;
+  border: 1px solid #ec6e4c;
 }
 #current-button:hover {
-  background: #c33d18;
+  background: #f0491b;
   transition: all 150ms ease-in-out;
 }
-.weather-app {
-  padding: 10px;
-}
-.weather-temperature img {
-  margin-right: 5px;
-  height: 90px;
-  width: 90px;
-}
-.units {
-  font-size: 18px;
-  position: relative;
-  top: -30px;
-}
-.current-forecast {
-  margin-bottom: 10px;
-  font-family: Times, serif;
-}
-.current-week-day {
-  text-align: right;
-}
+
+/* ----------------------------------------------------------------------------
+  Forecast
+  -------------------------------------------------------------------------- */
 .forecast {
   margin-top: 15px;
-}
-.forecast img {
-  position: relative;
-  left: -5px;
 }
 .forcast-card {
   width: 85px;
@@ -102,10 +105,30 @@ footer {
 .forecast-week-day {
   font-size: 14px;
 }
+.forecast img {
+  position: relative;
+  left: -5px;
+}
 .forecast-temperature-max {
   font-size: 12px;
 }
 .forecast-temperature-min {
   color: #ec6e4c;
   font-size: 11px;
+  position: relative;
+  top: 2px;
+}
+/* ----------------------------------------------------------------------------
+  Footer
+  -------------------------------------------------------------------------- */
+footer {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 13px;
+}
+footer a {
+  color: #ec6e4c;
+}
+footer a:hover {
+  color: #f0491b;
 }
